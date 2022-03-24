@@ -1,0 +1,218 @@
+<html>
+    <head>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, #7f278f,#88caff);
+        }
+        nav{
+            width: 80%;
+            position:sticky;
+            margin:5px auto;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right ;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 25px;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo{
+            flex-basis: 20%;
+        }
+        .logo img{
+            width: 120px;
+            height: 80px;
+        }
+        .information{
+            width: 1000px;
+            height: 1000px;
+            position: absolute;
+            top: 50%;
+            left:-10%;
+            transform: translateY(-50%);
+        }
+        #circle{
+            width: 1000px;
+            height: 1000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            transform: rotate(0deg);
+            transition: 1s;
+         }
+         .feature img{
+             width: 70px;
+         }
+         .feature{
+             position: absolute;
+             display: flex;
+             color: white;
+         }
+         .feature div{
+             margin-left: 20px;
+         }
+         .feature div p{
+              margin-top: 8px;
+         }
+         .one{
+             top: 450px;
+             right: -140px;
+         }
+         .two{
+             top: 100px;
+             left: 350px;
+             transform: rotate(-90deg);
+         }
+         .three{
+             bottom: 450px;
+             left: 50px;
+             transform: rotate(-180deg);
+         }
+         .four{
+             bottom: 150px;
+             right: 450px;
+             transform: rotate(-270deg);
+             width: 50px;
+             height: 70px;
+         }
+        .mobile{
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .controls{
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        .controls h3{
+            margin: 15px 0;
+            color: #fff;
+        }
+        #up{
+             width: 45px;
+             cursor: pointer;
+        }
+        #down{
+             width: 45px;
+             cursor: pointer;
+        }
+        .overlay{
+            width: 0;
+            height: 0;
+            border-top: 500px solid white;
+            border-right: 500px solid transparent;
+            border-bottom: 500px solid white;
+            border-left: 500px solid white;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="iphone8.png" class="mobile">
+            <div id="circle">
+                <div>
+                    <img src="">
+                </div>
+                <div class="feature one">
+                    <img src="camera.png">
+                    <div>
+                        <h1>Camera</h1>
+                        <p>12 MP, Quad-LED dual-tone flash, HDR</p>
+                    </div>
+                </div>
+                <div class="feature two">
+                    <img src="processor.png">
+                    <div>
+                        <h1>Processor</h1>
+                        <p>Apple A11 Bionic</p>
+                    </div>
+                </div>
+                <div class="feature three">
+                    <img src="display.png">
+                    <div>
+                        <h1>Display</h1>
+                        <p>4.70-inch <br>(750x1334)</p>
+                    </div>
+                </div>
+                <div class="feature four">
+                    <img src="battery.png">
+                    <div>
+                        <h1>Battery</h1>
+                        <p>1821mAh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <img src="up1.png" id="up">
+            <h3>Features</h3>
+            <img src="down1.png" id="down">
+        </div>
+    </div>
+    <script>
+         function showAlert() {
+         alert ("Hello world!");
+         }
+        var circle = document.getElementById("circle");
+        var up = document.getElementById("up");
+        var down = document.getElementById("down");
+        var rotatevalue = circle.style.transform;
+        var rotatesum;
+        up.onclick = function(){
+        rotatesum=rotatevalue+"rotate(-90deg)";
+        circle.style.transform = rotatesum;
+        rotatevalue=rotatesum
+        }
+        down.onclick = function(){
+        rotatesum=rotatevalue+"rotate(90deg)";
+        circle.style.transform = rotatesum;
+        rotatevalue=rotatesum
+        }
+    </script>
+</body>
+</html>
